@@ -323,7 +323,7 @@ void abb_iter_avanzar_izquierda(abb_nodo_t* nodo, abb_iter_t* iter) {
 	while(actual->izq != NULL && !menor_a_desde) {
 		menor_a_desde= iter->cmp(actual->izq->clave, iter->desde) < 0;
 		pila_apilar(iter->pila, actual->izq);
-		if(!menor_a_desde) {
+		if(menor_a_desde != 0) {
 			abb_iter_in_avanzar(iter);
 		}
 		actual= actual->izq;

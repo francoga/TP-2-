@@ -206,7 +206,9 @@ bool procesar_arbol_para_ver_tablero(abb_t* arbol, tablero_t* tablero) {
 				lista_insertar_ultimo(tablero->lista_de_vuelos, registro);
 			}
 		}
+		abb_iter_in_avanzar(iterador);
 	}
+	abb_iter_in_destruir(iterador);
 	return true;
 }
 
